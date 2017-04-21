@@ -1,0 +1,47 @@
+body{
+ 
+}
+
+.header{
+  // outline: 1px solid;
+  position: relative;
+}
+
+.menu-hamburguesa{
+	width: 30px;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+
+	.one, .two, .three{
+       width: 100%;
+       height: 3px;
+       background: black;
+       transition: all 0.5s;
+	}
+
+	.two{
+		margin: 5px 0;
+	}
+    
+    // animacion Menu Hamburguesa
+
+    &:hover {
+        
+        .two{
+           opacity: 0;
+        }
+        .one{
+        	transform: rotate(45deg) translate(5px, 5px);
+        }
+        .three{
+            transform: rotate(-45deg) translate(5px, -7px);
+        }
+
+     }
+
+}
+
+
+
