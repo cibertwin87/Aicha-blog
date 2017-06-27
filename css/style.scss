@@ -1,34 +1,93 @@
+// @import fonts
+
+$color: #4c4c4c;
+$hover_color: #5A93BE;
+$color_titles: #ccc;
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  // font-family: sans-serif;
+  // /* 1 */
+  // -ms-text-size-adjust: 100%;
+  // /* 2 */
+  // -webkit-text-size-adjust: 100%;
+  // /* 2 */ 
+}
+
+
 body{
- 
+ color: $color;
+ margin: 0;
+ padding: 0;
+ height: 2000px;
+ position:relative;
+ font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.header{
+.nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  height: 50px;
+
+ }
+
+ .logo-manta{
   // outline: 1px solid;
-  position: relative;
-}
+  height: 52px;
+  width: 100px;
+  margin-left: 20px;
+  margin-top: 10px;
+  background-image: url(/img/manta2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100px;
+  transition: all 0.2s;
+  &:hover{
+    cursor: pointer;
+  }
+  &.mini{
+    width: 85px;
+    background-size: 80px;
+  }
+ }
 
+// .window{
+//   // height: 60px;
+//   // width: 60px;
+//   // float: right;
+//   // margin-right: 25px;
+//   // margin-top: 10px;
+//   // border-radius: 50%;
+//   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+//   // transform: scale(0);
+//   // transition: all 0.3s;
+// }
 .menu-hamburguesa{
 	width: 30px;
 	cursor: pointer;
 	position: absolute;
-	right: 20px;
-	top: 15px;
-
+	right: 40px;
+	top: 28px;
 	.one, .two, .three{
        width: 100%;
        height: 3px;
        background: black;
-       transition: all 0.5s;
+       transition: all 0.3s;
 	}
-
 	.two{
 		margin: 5px 0;
 	}
     
-    // animacion Menu Hamburguesa
+    // animacion Menu Hamburguesa al hacer click sobre ella con la clase "mostrar"
+    &.mostrar{
 
-    &:hover {
-        
         .two{
            opacity: 0;
         }
@@ -42,6 +101,391 @@ body{
      }
 
 }
+
+// Estilos del menu
+.main-nav{
+  position: absolute;
+  left: 37%;
+  top: 150px;
+  z-index: 2000;
+  .menu{
+    list-style: none;
+    opacity: 1;
+    // visibility: hidden;
+    display: none;
+    // text-transform: uppercase;
+    li{
+       margin-top: 25px;
+       opacity: 0;
+       color: $color;    
+    }
+
+    // Añadiendo la clase "mostrar" la cual se activa cuando hacemos click en la Hambuerguesa
+    &.mostrar{
+        // visibility: visible;
+        display: block;
+        opacity: 1;
+        li{ 
+          &:nth-child(1){
+          opacity: 1;
+          transition: opacity 0.5s;
+             &:hover{
+              cursor: pointer;
+              color: $hover_color;
+              transform: scale(1.1);
+              transition: all 0.3s;
+              
+              }
+          }
+          &:nth-child(2){ 
+          opacity: 1;
+          transition: opacity 1s;
+             &:hover{
+              cursor: pointer;
+              color: $hover_color;
+              transform: scale(1.1);
+              transition: all 0.3s; 
+              
+              }
+          }
+          &:nth-child(3){ 
+          opacity: 1;
+          transition: opacity 1.5s;
+             &:hover{
+             cursor: pointer;
+             color: $hover_color;
+             transform: scale(1.1);
+             transition: all 0.3s;
+             
+             }
+          }
+          &:nth-child(4){ 
+          opacity: 1;
+          transition: opacity 2s;
+             &:hover{
+             cursor: pointer;
+             color: $hover_color;
+             transform: scale(1.1);
+             transition: all 0.3s; 
+             
+             }
+          }
+          &:nth-child(5){ 
+          opacity: 1;
+          transition: opacity 2.3s;
+             &:hover{
+             cursor: pointer;
+             color: $hover_color;
+             transform: scale(1.1);
+             transition: all 0.3s; 
+            
+             }
+          }
+        } 
+    }
+  }
+}
+// Logo animado en el Header
+.media-logo{
+   margin-top: -80px;
+   overflow: hidden;
+     img{
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      height: auto;
+      transform: scale(1.3);
+      outline-offset: hidden;
+        }
+}
+
+//Crea el Efecto de difusion en el fondo (En el Container, no en el Header) 
+.menu-open{
+  -webkit-filter:blur(8px);
+  filter:blur(15px);
+}
+
+// Estilos del container del cuerpo de la pagina
+
+#home-page{
+  margin-top: 0px;
+  padding-bottom: 60px;
+}
+
+hr.div{
+  width: 90%;
+  border-top: 2px solid #eee;
+}
+hr.hr-title{
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    border-width: 0;
+    border-top: 1px solid #E1E1E1;
+}
+
+h2.title-text{
+  font-size: 4.0rem;
+  line-height: 1.25;
+  letter-spacing: -.1rem;
+}
+
+article{
+  padding: 50px 0;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.paragraf_wrap{
+  position:relative;
+  width: 750px;
+  .Paragraf_Text{
+  opacity: 0;
+  position: absolute;
+  top: 30px;
+  transition: all 2s;
+  &.mostrar{
+    opacity: 1;
+    top: 0px;
+    }
+  }
+
+}
+
+//Slider styles
+.testimonios{
+  clear: both;
+  padding-top: 230px;
+  text-align: center;
+  h2{
+    margin-bottom: 30px;
+  }
+}  
+
+.carousel-inner{
+  // background-color: rgba(0,0,0,0.02);
+}
+
+.carousel-inner>.item>img {
+    line-height: 1;
+    opacity: 0;
+}
+
+.carousel-control.right, .carousel-control.left {
+   background-image: none;
+    // color: #f4511e;
+   // background-color: rgba(180,180,180,0.25);
+   // color: rgba(0,0,0,0.44);
+   height: 80px;
+   width: 80px;
+   top: 120px;
+   border-radius: 50%;
+}
+
+.carousel-indicators li {
+    background-color: rgba(180,180,180,0.25);
+    color: rgba(0,0,0,0.44);
+
+}
+
+.carousel-indicators li.active {
+    // background-color: #f4511e;
+    background-color:$color;
+}
+
+.item{
+  padding: 20px;
+
+   h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+    }
+   span {
+    font-style: normal;
+    }
+    img{
+      margin: 20px auto;
+      // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+.fotos{
+  position: relative;
+  top: 45px;
+  left: 0px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  .fotos_carrusel{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 1s;
+      &.show{
+        opacity: 1;
+      }
+    }
+}
+
+.carousel-inner {
+ margin-top: 15px;
+}
+
+.img_about{
+  height: 460px;
+  background-image: url(/img/model2.jpg);
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  background-attachment: fixed;
+  margin-top: 100px;
+  border-radius: 50%;
+  width: 460px;
+  left: 50%;
+  margin-left: -230px;
+  // opacity: 1;
+  position: relative;
+  // .img_about_int{
+  //   background-color: rgba(0, 0, 0, 0.5);
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   border-radius: 50%;
+  //   opacity: 0;
+  // }
+}
+.links_row{
+  margin-top:100px;
+  // outline: 1px solid;
+  // background-color:#F6F6F8;
+  .fallow_links{
+    z-index: 2100;
+    display: none;
+    &.mostrar{
+      display: block;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+.form-wrap{
+  // outline: 1px solid;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin: auto;
+  box-shadow: 0px 0px 3px grey;
+}
+input{
+  background: none;
+  border: solid 2px #21a1e1;
+  color: #21a1e1;
+  padding: 15px 40px;
+  font-size: 18px;
+  display: inline-block;
+  width: 100%;
+  &:focus,
+  &:active{
+    outline: none;
+  }
+  &[type='text'],
+  &[type='email']{
+    border: none;
+    border-bottom: solid 2px #21a1e1; 
+  }
+  &[type='submit']{
+    &:active,
+    &:hover
+    {
+      color: white;
+      background: #21a1e1;
+    }
+  }
+}
+
+.input-group{
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  input{
+    // padding: 15px 0px;
+    padding: 15px 40px 5px 5px;
+  }
+  label{
+    position: absolute;
+    top:50%;
+    right: null;
+    bottom: null;
+    left: 0px;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #999;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    //Propiedad que desabilita el click o doble click sobre el elemento
+    pointer-events: none;
+  }
+  input{
+    &:focus + label,
+    &.has-value + label
+    {
+      top:-10px;
+      font-size: 12px;
+      color:#aaa;
+
+    }
+  }
+}
+
+.never_give_up{
+  text-align: center;
+  opacity: 0;
+  margin-top: 0px;
+  &.mostrar{
+    opacity: 1;
+    margin-top: 80px;
+  }
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
