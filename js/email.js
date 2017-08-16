@@ -48,5 +48,26 @@ $(".awesome-form #inputMessage").focusout(function(){
   }
 });
 
+//######## Mostrar lineas de texto al lado del formulario
+
+// var text_1 = document.getElementById('linea_1');
+// var text_2 = document.getElementById('linea_2');
+// var text_3 = document.getElementById('linea_3');
+
+//     $('#inputName').click(function() {
+//       $('#linea_1').addClass('mostrar');
+//     });
+//     $('#inputEmail').click(function() {
+//       $('#linea_2').addClass('mostrar');
+//     });
+//     $('#inputMessage').click(function() {
+//       $('#linea_3').addClass('mostrar');
+//     });
+
+
 
 });
+
+
+
+

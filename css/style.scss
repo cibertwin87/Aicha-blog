@@ -3,6 +3,7 @@
 $color: #4c4c4c;
 $hover_color: #5A93BE;
 $color_titles: #ccc;
+$bg-color: #FAFAFA;
 
 /**
  * 1. Set default font family to sans-serif.
@@ -69,6 +70,61 @@ body{
 //   // transform: scale(0);
 //   // transition: all 0.3s;
 // }
+.left-container{
+  position: absolute;
+  top: 0px;
+  // right: -120px;
+  -webkit-animation: aparicion 1s ease-in-out 2.3s; /* Safari 4.0 - 8.0 */
+   -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  animation: aparicion 1s ease-in-out 2.3s;
+  animation-fill-mode: forwards;
+
+  @keyframes aparicion{
+      from {right: -120px;}
+      to {right: 0px;}
+    }
+
+  .vertical-name{
+  // outline: 1px solid;
+  background-image: url(/img/name2.png);
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  background-size: 50%;
+  height: 300px;
+  width: 150px;
+  position: absolute;
+  top: 80px;
+  right: -30px;
+
+  }
+  // linea svg progreso
+  #mySVG{
+    position: fixed;
+    // top: 15%;
+    width: 45px;
+    height: 210px;
+    top: 57%;
+    // right: 10px;
+    // margin-left:-50px;
+    -webkit-animation-name: aparicionll 1s ease-in-out 2.3s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation: aparicionll 1s ease-in-out 2.3s;
+    // animation-name: aparicionll;
+    // animation-duration: 1s;
+    // animation-timing-function: linear;
+    // animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+
+    @keyframes aparicionll{
+      from {right: -120px;}
+      to {right: 10px;}
+    }
+  }
+
+
+}
+
+
 .menu-hamburguesa{
 	width: 30px;
 	cursor: pointer;
@@ -102,29 +158,56 @@ body{
 
 }
 
+
 // Estilos del menu
 .main-nav{
   position: absolute;
-  left: 37%;
+  left: 50%;
+  margin-left: -400px;
   top: 150px;
-  z-index: 2000;
-  .menu{
+  z-index: -1;
+  height: 350px;
+  width:  800px;
+  // border-radius:50%;
+  border: none;
+  background: white;
+  // opacity: 0.1;
+  // filter: alpha(opacity=10);
+  filter:blur(15px);
+  // opacity: 0;
+  display: none;
+  transition: display 0.5s;
+  &.mostrar{
+    display: block;
+  }
+  
+}
+.menu{
+    position:absolute;
+    left: 50%;
+    top: 170px;
+    margin-left: -132px;
     list-style: none;
-    opacity: 1;
+    z-index: 1000px;
+    opacity: 0;
+    padding: 25px;
     // visibility: hidden;
     display: none;
+    // box-shadow: 0px 6px 14px 27px white;
     // text-transform: uppercase;
+    transition: opacity 2s;
     li{
        margin-top: 25px;
        opacity: 0;
-       color: $color;    
+       color: $color; 
+       // transition: opacity 1s;
     }
-
     // Añadiendo la clase "mostrar" la cual se activa cuando hacemos click en la Hambuerguesa
     &.mostrar{
         // visibility: visible;
         display: block;
         opacity: 1;
+        // transition: opacity 1s;
         li{ 
           &:nth-child(1){
           opacity: 1;
@@ -184,8 +267,7 @@ body{
         } 
     }
   }
-}
-// Logo animado en el Header
+// Logo animado (Texto) en el Header
 .media-logo{
    margin-top: -80px;
    overflow: hidden;
@@ -194,15 +276,16 @@ body{
       display: block;
       margin: 0 auto;
       height: auto;
-      transform: scale(1.3);
+      transform: scale(1.2);
       outline-offset: hidden;
         }
 }
 
-//Crea el Efecto de difusion en el fondo (En el Container, no en el Header) 
+//Crea el Efecto de difusion de fondo en el bodz y en el div contenedor del logo (no en el Header) 
 .menu-open{
   -webkit-filter:blur(8px);
   filter:blur(15px);
+  transition: all 0.3s;
 }
 
 // Estilos del container del cuerpo de la pagina
@@ -210,6 +293,8 @@ body{
 #home-page{
   margin-top: 0px;
   padding-bottom: 60px;
+  z-index: 2100;
+  padding: 0px;
 }
 
 hr.div{
@@ -236,13 +321,14 @@ article{
   text-align: center;
 
 }
+//Efecto de aparicion sobre los parrafos
 .paragraf_wrap{
-  position:relative;
   width: 750px;
   .Paragraf_Text{
   opacity: 0;
-  position: absolute;
+  position: relative;
   top: 30px;
+  // margin-bottom: 100px;
   transition: all 2s;
   &.mostrar{
     opacity: 1;
@@ -251,12 +337,13 @@ article{
   }
 
 }
-
 //Slider styles
 .testimonios{
   clear: both;
-  padding-top: 230px;
+  padding-top: 100px;
   text-align: center;
+  width: 80%;
+  margin-left: 10%;
   h2{
     margin-bottom: 30px;
   }
@@ -359,12 +446,16 @@ article{
   //   opacity: 0;
   // }
 }
+#about_parragraf{
+
+}
+
 .links_row{
   margin-top:100px;
   // outline: 1px solid;
   // background-color:#F6F6F8;
   .fallow_links{
-    z-index: 2100;
+    z-index: 2000;
     display: none;
     &.mostrar{
       display: block;
@@ -374,15 +465,72 @@ article{
     }
   }
 }
-.form-wrap{
-  // outline: 1px solid;
-  width: 90%;
-  max-width: 500px;
-  padding: 40px;
-  margin: auto;
-  box-shadow: 0px 0px 3px grey;
+
+.contact-section{
+  // background: $bg-color;
+   border-top: 1px solid #eaeaea;
+   // -webkit-box-shadow: 2px 5px 3px $color_titles; 
+   margin-top: 100px;
+   width: 100%;
+   // margin-top: 80px;
+   padding:25px;
+   // background-color: #f6f6f8;
+   .contact-wrap{
+    margin-top: 100px;
+   }
 }
-input{
+#line{
+  margin-bottom: 50px;
+  // padding:15px;
+  // font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  // font-style: italic;
+}
+.form-container{
+  padding:0px;
+  margin:0px;
+  // z-index: 2000;
+ .form-wrap{
+  width: 100%;
+  max-width: 550px;
+  margin: auto;
+  margin-right: 80px;
+  position: relative;
+  padding: 0px 40px 40px 40px;
+  background-color: #ffffff;
+  // border: 1px solid #f5f5f5;
+  // background-color: #fafafa;
+  
+  /********** Sombra debajo del form (coool) *********/ 
+  // &::after{
+  //   content: "";
+  //   position: absolute;
+  //   height: 50%;
+  //   width: 96%;
+  //   left: 50%;
+  //   bottom: 2px;
+  //   margin-left: -48%;
+  //   -webkit-box-shadow: 0 5px 7px #999;
+  //   box-shadow: 0 5px 7px #999;
+  //   z-index: -1;
+  //   border-radius: 13%;
+  //   -webkit-transition: all 0.3s ease-in-out;
+  //   -o-transition: all 0.3s ease-in-out;
+  //   transition: all 0.3s ease-in-out;
+  // }
+  // &:hover::after{
+  //   box-shadow: none;
+  // } 
+}
+
+}
+.contact-steps-text{
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+// Formulario de correo "Estilo"
+input,textarea{
   background: none;
   border: solid 2px #21a1e1;
   color: #21a1e1;
@@ -395,25 +543,30 @@ input{
     outline: none;
   }
   &[type='text'],
-  &[type='email']{
+  &[type='email'],
+  &[type='textarea']
+  {
     border: none;
     border-bottom: solid 2px #21a1e1; 
   }
   &[type='submit']{
+    margin-top: 25px;
+    color: white;
+    background: #21a1e1;
     &:active,
     &:hover
     {
-      color: white;
-      background: #21a1e1;
+      color: #21a1e1;
+      background: white;
     }
   }
 }
-
+// Formulario de correo "Animacion"
 .input-group{
   position: relative;
   width: 100%;
   margin-bottom: 30px;
-  input{
+  input,textarea{
     // padding: 15px 0px;
     padding: 15px 40px 5px 5px;
   }
@@ -425,35 +578,75 @@ input{
     left: 0px;
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-style: italic;
+    font-weight: lighter;
     font-size: 16px;
-    color: #999;
+    // color: #999;
     transform: translateY(-50%);
     transition: all 0.3s;
     //Propiedad que desabilita el click o doble click sobre el elemento
     pointer-events: none;
   }
-  input{
+  input,textarea{
     &:focus + label,
     &.has-value + label
     {
       top:-10px;
       font-size: 12px;
-      color:#aaa;
-
+      // color:#aaa;
+      color: #21a1e1;
     }
   }
 }
 
+.never-give-up-container{
+  position:relative;
+  height: 300px;
+  margin-top: 15px;
+  margin-bottom: 150px;
+}
 .never_give_up{
+  position: relative;
+  top: -60px;
   text-align: center;
   opacity: 0;
   margin-top: 0px;
+  height: 400px;
   &.mostrar{
     opacity: 1;
-    margin-top: 80px;
   }
 
 }
+
+.phrases-container{
+  // padding:0 50px;
+  // background-color: #eee;
+  width: 950px;
+  margin: 0 auto;
+  .phrases{
+    filter:blur(7px);
+    transition: all 0.5s;
+    &.leer{
+      filter: none;
+    }
+    .myNotes{
+      border-left: 2px solid #eee;
+    }
+    &:hover,&.focus{
+      cursor: default;
+      filter: none;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// #linea_1, #linea_2, #linea_3{
+//   opacity: 0;
+//   transition: opacity 1s;
+//   &.mostrar{
+//     opacity: 1;
+//   }
+// }
+
 
  
 

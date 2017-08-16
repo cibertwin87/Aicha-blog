@@ -4,6 +4,7 @@ var menu_Hamb = document.getElementById('menu-hamburguesa');
 var menu = document.getElementById('menu');
 var body = document.getElementById('home-page');
 var id = document.getElementById('logo');
+var nav = document.getElementById('nav');
 // var nav = document.getElementById('nav');
 
   menu_Hamb.addEventListener('click', function(){
@@ -11,6 +12,8 @@ var id = document.getElementById('logo');
     menu.classList.toggle('mostrar');
     body.classList.toggle('menu-open');
     id.classList.toggle('menu-open');
+    nav.classList.toggle('mostrar');
+
 
 
      // Le añadi los eventListener para cuando hagan click en el menu hambuerguesa se quede atento 
@@ -21,6 +24,7 @@ var id = document.getElementById('logo');
         menu.classList.remove('mostrar');
         body.classList.remove('menu-open');
         id.classList.remove('menu-open');
+        nav.classList.remove('mostrar');
        });
 
       id.addEventListener('click', function(){ 
@@ -28,6 +32,8 @@ var id = document.getElementById('logo');
          menu.classList.remove('mostrar');
          body.classList.remove('menu-open');
          id.classList.remove('menu-open');
+         nav.classList.remove('mostrar');
+
        });
 
   });
@@ -45,13 +51,14 @@ $(window).scroll(function(){
   // console.log(wScroll);
 
     if (wScroll > $('.title-text').offset().top - $(window).height()) {
-     $(".Paragraf_Text").addClass('mostrar');
+     $("#parragraf_1").addClass('mostrar');
   	 // $(".never_give_up").addClass('mostrar');
   }
-
-  if (wScroll > $('#line').offset().top) {
-     $(".never_give_up").addClass('mostrar');
+      if (wScroll > $('.about').offset().top - $(window).height()) {
+     $("#parragraf_2").addClass('mostrar');
+     // $(".never_give_up").addClass('mostrar');
   }
+  
 
    if (wScroll > $('.div').offset().top) {
     $('.logo-manta').addClass('mini');
@@ -67,10 +74,14 @@ $(window).scroll(function(){
 
   }
 
-    if (wScroll > $('.img_about').offset().top){
+    if (wScroll > $('.links_row').offset().top - $(window).height()){
     $('.fallow_links').addClass('mostrar');
   }
 
+  if (wScroll > $('.never_give_up').offset().top - $(window).height()/1.5) {
+     $(".never_give_up").addClass('mostrar');
+     console.log('ya');
+  }
   // if (wScroll > $('.div').offset().top ) {
   // 	 $(".text").addClass('animated fadeInUp');
   // }

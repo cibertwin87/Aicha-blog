@@ -8,43 +8,82 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/contact-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- css para la ventana que aparece de "Mas sobre mi" -->
+    <link rel="stylesheet" type="text/css" href="css/modal-window.css">
     <link rel="stylesheet" type="text/css" href="css/alertify.css">
-
+    <!-- css para el menu fijo scroleable-->
+    <link rel="stylesheet" type="text/css" href="css/stiky-menu/main.css">
 </head>
+
 <body>
-    <nav id="nav" class="nav-bar">
+    <nav class="nav-bar">
         <div id="manta" class="logo-manta">
         </div>
-
-        <div id="menu-hamburguesa" class="menu-hamburguesa">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
+        <div class="left-container">
+            <div id="menu-hamburguesa" class="menu-hamburguesa">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+            <div class="vertical-name">
+                <svg id="mySVG" height="210" width="500">
+                  <line id="triangle" x1="0" y1="0" x2="0" y2="210" style="stroke:rgb(119,119,119);stroke-width:2" />
+                  Sorry, your browser does not support inline SVG.
+                </svg>
+                <svg id="mySVG" height="210" width="500">
+                  <line x1="0" y1="0" x2="0" y2="210" style="stroke:rgb(119,119,119);stroke-width:0.5" />
+                  Sorry, your browser does not support inline SVG.
+                </svg>
+            </div>
         </div>
 
-        <div class="main-nav">
-            <ul id="menu" class="menu text-center">
-                <li><h3 class="text-primary">Accueil</h3></li>
-                <li><h3>Coaching Holistique</h3></li>
-                <li><h3>Presentation</h3></li>
-                <li><h3>Tarif</h3></li>
-                <li><h3>Contact</h3></li>
-            </ul>
+        <div id="nav" class="main-nav">
+            
         </div>
+        <ul id="menu" class="menu text-center">
+            <li><h3 class="text-primary">Accueil</h3></li>
+            <li><h3>Coaching Holistique</h3></li>
+            <li><h3>Presentation</h3></li>
+            <li><h3>Tarif</h3></li>
+            <li><h3>Contact</h3></li>
+        </ul>
     </nav>  
     <div id="logo" class="media-logo">
         <img src="img/media-files/LEGEND.gif" alt=""> 
     </div>
 
-    <div id="home-page" class="container">
+    <div id="home-page" class="container-fluid">
         <hr class="div">
         <section class="textos">
             <article class="">
-                <h2 class="title-text">Que es Coaching?</h2>
+            <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <h2 class="title-text">Que es Coaching?</h2>
+                            <hr class="hr-title">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 text-center paragraf_wrap">
+                            <p id="parragraf_1" class="Paragraf_Text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                <!-- <h2 class="title-text">Que es Coaching?</h2>
                 <hr class="hr-title">
                 <div class="paragraf_wrap">
-                    <p class="Paragraf_Text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    <p id="parragraf_1" class="Paragraf_Text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -57,7 +96,7 @@
                         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
+                    </div> -->
                 </article>
             </section>
 
@@ -120,18 +159,19 @@
 
             </section>
 
-            <section class="about_me">
+            <section class="about_me cd-section">
+
                 <article>
                     <div class="row">
                         <div class="col-sm-12 text-center" style=" margin-top: 100px; color: #ccc;">
-                            <h2 class="title-text">About me</h2>
+                            <h2 class="title-text about">About me</h2>
                             <hr class="hr-title">
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        <div class="col-sm-12 text-center paragraf_wrap">
+                            <p id="parragraf_2" class="Paragraf_Text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -143,31 +183,121 @@
                                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
+                        </div>
 
                             <div class="col-sm-12 img_about">
                                 <div class="img_about_int"></div>
                             </div>        
                         </div>
 
-                        <div class="row links_row">
-                            <div class="col-sm-4 fallow_links">
-                                <img src="img/media-files/facebook.gif" alt="">
-                            </div> 
-                            <div class="col-sm-4 fallow_links">
-                                <img src="img/media-files/instagram.gif" alt="">
-                            </div> 
-                            <div class="col-sm-4 fallow_links">
-                                <img src="img/media-files/linkedin.gif" alt="">
-                            </div>           
-                        </div>
+                        <div class="cd-modal-action">
+                        <a href="#0" class="btn" data-type="modal-trigger">More About Me</a>
+                        <span class="cd-modal-bg"></span>
+                        </div> <!-- cd-modal-action -->
+             
+                         <div class="cd-modal">
+                            <div class="cd-modal-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+                                </p>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+                                </p>
+
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+                                </p>
+                            </div> <!-- cd-modal-content -->
+                        </div> <!-- cd-modal -->
+
+                        <a href="#0" class="cd-modal-close">Close</a>
+
 
                     </article>
 
+
+                </section>
+
+                <div class="row never-give-up-container">
+                        <div class="col-sm-12 text-center">
+                            <div class="never_give_up">
+                                <img src="img/media-files/never-give-up.gif" alt=""> 
+                            </div>    
+                        </div>
+                </div>
+
+                <section class="phrases-container">
                     <div class="row">
-                        <h2 id="line">Contacta conmigo</h2>
-                        <div class="col-sm-12">
+                   
+                        <div class="col-sm-4 phrases leer">
+                         <blockquote class="myNotes">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                          </blockquote>
+                        </div>
+                       
+                            
+                        <div class="col-sm-4 phrases">
+                        <blockquote class="myNotes">
+                            <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                            </blockquote>
+                        </div>
+                        <div class="col-sm-4 phrases">
+                          <blockquote class="myNotes">
+                            <p>occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 phrases">
+                            <blockquote class="myNotes">
+                            <p>occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                            </blockquote>
+                        </div>
+                        <div class="col-sm-4 phrases active">
+                           <blockquote class="myNotes">
+                            <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                            </blockquote>
+                        </div>
+                        <div class="col-sm-4 phrases">
+                            <blockquote class="myNotes">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
+                            <small>Someone famous in <cite title="Source Title"></small>
+                          </blockquote>
+                        </div>
+                    </div>
+                </section>
+
+                 <section class="contact-section">
+
+                    <div class="row contact-wrap">
+                      
+                        <div class="col-sm-6 contact-text" style="padding-left: 45px;">
+                        <h3 class="" style="margin: 0px; font-size: 2.3em;">Contactame</h3>
+                        <h3 style="color: #21a1e1; margin: 0px; font-size: 2.3em; margin-bottom: 25px;">Enviame un email</h3>
+                            
+                              <p id="linea_1" class="contact-steps-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                              <p id="linea_2" class="contact-steps-text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+                              <p id="linea_3" class="contact-steps-text">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            
+                        </div>
+                        <div class="col-sm-6 form-container">
                             <div class="form-wrap">
+                             <!-- <h2 id="line" class="text-center title-text text-muted">Contacta conmigo</h2> -->
                                 <form id="contact-form" class="awesome-form">
                                     <div class="input-group">
                                         <input id="inputName" type="text" name="">
@@ -178,24 +308,32 @@
                                         <label>Email Address</label>
                                     </div>
                                     <div class="input-group">
-                                        <input id="inputMessage" type="text">
+                                        <!-- <input id="inputMessage" class="c-form-control" type="text"> -->
+                                        <textarea id="inputMessage" type="textarea"></textarea>
                                         <label>Message</label>
                                     </div>
                                     <input type="submit" value="Send" name="">
                                 </form>
                             </div>
                         </div>
-                    </div>    
-                </section>
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <div class="never_give_up">
-                            <img src="img/media-files/never-give-up.gif" alt=""> 
-                        </div>    
-                    </div>
-                </div>
+                    </div>  
+                 </section>  
 
-            </div>  
+
+                 <div class="row links_row">
+                        
+                            <div class="col-sm-4 fallow_links">
+                                <img src="img/media-files/facebook.gif" alt="">
+                            </div> 
+                            <div class="col-sm-4 fallow_links">
+                                <img src="img/media-files/instagram.gif" alt="">
+                            </div> 
+                            <div class="col-sm-4 fallow_links">
+                                <img src="img/media-files/linkedin.gif" alt="">
+                            </div>           
+                        </div>       
+
+    </div>  
 
 
             <footer class="container-fluid text-center">
@@ -222,7 +360,40 @@
 <script src="js/clickOutside.js" type="text/javascript"></script>
 <!--  pluggin js para mostrar mensajes de alerta -->
 <script src="js/alertify.js" type="text/javascript"></script>
+<!--  codigo javascript para el envio de mensajes -->
 <script src="js/email.js" type="text/javascript"></script>
+<!--  bibliotecas javascript para el efecto del boton "Mas sobre mi" -->
+<script src="js/modal-window/modernizr.js"></script>
+<script src="js/modal-window/velocity.min.js"></script>
+<script src="js/modal-window/main.js"></script> 
+<!-- codigo del menu fijo scroleable-->
+<script src="js/stiky-menu/advanced-progress-tracker.js"></script> 
+
+<!-- Resource jQuery -->
+
+<script>
+// Get the id of the <path> element and the length of <path>
+var triangle = document.getElementById("triangle");
+var length = triangle.getTotalLength();
+
+// The start position of the drawing
+triangle.style.strokeDasharray = length;
+
+// Hide the triangle by offsetting dash. Remove this line to show the triangle before scroll draw
+triangle.style.strokeDashoffset = length;
+
+// Find scroll percentage on scroll (using cross-browser properties), and offset dash same amount as percentage scrolled
+window.addEventListener("scroll", myFunction);
+
+function myFunction() {
+var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+  var draw = length * scrollpercent;
+  
+  // Reverse the drawing (when scrolling upwards)
+  triangle.style.strokeDashoffset = length - draw;
+}
+</script>
 
 
 </body>
